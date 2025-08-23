@@ -6,8 +6,10 @@ const Counter = require('./models/counter')
 const app = express()
 const server = http.createServer(app);
 const io = new Server(server);
+require('dotenv').config();
 
-const dbURI =  'mongodb+srv://counterManager:counterManager7745@cluster0.quo6unb.mongodb.net/counterDB?retryWrites=true&w=majority&appName=Cluster0'
+console.log(process.env.DATABASE_PASSWORD)
+const dbURI =  `mongodb+srv://counterManager:${process.env.DATABASE_PASSWORD}@cluster0.quo6unb.mongodb.net/counterDB?retryWrites=true&w=majority&appName=Cluster0`
 
 mongoose.connect(dbURI)
     .then((result) => { 
