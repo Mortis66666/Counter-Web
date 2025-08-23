@@ -68,18 +68,22 @@ app.delete("/", (req, res) => {
 
 app.patch("/", (req, res) => {
     try{
-        const { id, change } = req.body;    
-        Counter.findByIdAndUpdate(
-            id, 
-            { $inc: { value: change }}, 
-            { new: true } // important: return updated doc
-        )
-        .then((result) => {
-            io.emit('update counter', { result })
-            console.log("update cntr:", result)
-            res.json({ redirect: '/' })
-        })
-        .catch((err) => console.log("Error minus: ", err))
+        const { id, change } = req.body; 
+        if (change !=  1 && change != -1) {
+            res.tatus(400).send("YOU are naughty naughtyr")
+        } else {
+            Counter.findByIdAndUpdate(
+                id, 
+                { $inc: { value: change }}, 
+                { new: true } // important: return updated doc
+            )
+            .then((result) => {
+                io.emit('update counter', { result })
+                console.log("update cntr:", result)
+                res.json({ redirect: '/' })
+            })
+            .catch((err) => console.log("Error minus: ", err))
+        }
     }
     catch(err) {
         console.log("Error minus: ", err)
