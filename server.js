@@ -90,7 +90,7 @@ app.put("/", (req, res) => {
     const { id, value } = req.body;
     Counter.findByIdAndUpdate(
         id, 
-        { $set: { value: value }}
+        { $set: { value: 0 }}
     )
     .then((result) => {
         io.emit('reset counter', { result })

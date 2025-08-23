@@ -22,17 +22,20 @@ socket.on('new counter', (response) => {
     escape.textContent = `Name: ${counter.name}`
     wrapper.classList.add('counter');
     wrapper.setAttribute('id',`${counter._id}`)
-    wrapper.append(escape);
+    console.log(escape)
     // build inner HTML (matches your partial's structure)
-    wrapper.innerHTML = `
+    const stuff = document.createElement('div');
+    stuff.innerHTML = `
         <p class="number"">Number: ${counter.value}</p> 
         <div class="buttons">
             <button class="add" id="add" data-doc="${counter._id}">Add 1</button>
             <button class="reset" id="reset" data-doc="${counter._id}">Reset</button>
             <button class="minus" id="minus" data-doc="${counter._id}">Minus 1</button>
             <button class="delete" id="delete" data-doc="${counter._id}">Delete Counter</button>
-        </div>
+        </div> 
     `;
+    wrapper.append(escape);
+    wrapper.append(stuff)
     // append to header's parent (probably <body> or a <main>)
     counterList.append(wrapper);
 });
