@@ -1,0 +1,39 @@
+body{
+    background-color:antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    font-size: 2em;
+    font-weight: bold;
+    justify-self: center;
+}
+p{
+    justify-self: center;
+}
+.buttons{
+    display: flex;
+    justify-self: center;
+    justify-content: space-evenly;
+    width: 50%;
+
+}
+button{
+    border-radius: 5px;
+    height: min-content;
+}
+button:hover{
+    background-color: darkgray;
+    font-size: 1.05em;
+}
+button:active{
+    background-color: darkslategray;
+    color:azure;
+    font-size: 1.08em;
+    font-weight: bold;
+}
+.counter{
+    border: 3px solid;
+    border-radius: 5%;
+    padding: 2%;
+    margin: 2%;
+}
