@@ -17,11 +17,14 @@ socket.on('new counter', (response) => {
     const counter = response.result;
     // create a wrapper for the counter
     const wrapper = document.createElement('div');
+    const escape = document.createElement('p');
+    escape.classList.add("counterName")
+    escape.textContent = `Name: ${counter.name}`
     wrapper.classList.add('counter');
     wrapper.setAttribute('id',`${counter._id}`)
+    wrapper.append(escape);
     // build inner HTML (matches your partial's structure)
     wrapper.innerHTML = `
-        <p class="counterName"">Name: ${counter.name}</p>
         <p class="number"">Number: ${counter.value}</p> 
         <div class="buttons">
             <button class="add" id="add" data-doc="${counter._id}">Add 1</button>
