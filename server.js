@@ -8,7 +8,6 @@ const server = http.createServer(app);
 const io = new Server(server);
 require('dotenv').config();
 
-console.log(process.env.DATABASE_PASSWORD)
 const dbURI =  `mongodb+srv://counterManager:${process.env.DATABASE_PASSWORD}@cluster0.quo6unb.mongodb.net/counterDB?retryWrites=true&w=majority&appName=Cluster0`
 
 mongoose.connect(dbURI)

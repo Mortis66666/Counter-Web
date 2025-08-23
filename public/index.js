@@ -62,7 +62,7 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
         const counterId = e.target.dataset.doc;
         console.log("Add clicked for:", counterId);
         
-        const response = fetch( 'http://localhost:3000/', {
+        const response = fetch( '/', {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
@@ -79,7 +79,7 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
         const counterId = e.target.dataset.doc;
         console.log("Minus clicked for:", counterId);
         
-        const response = fetch( 'http://localhost:3000/', {
+        const response = fetch( '/', {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
@@ -96,7 +96,7 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
         const counterId = e.target.dataset.doc;
         console.log("Reset clicked for:", counterId);
        
-        const response = fetch( 'http://localhost:3000/', {
+        const response = fetch( '/', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
@@ -113,7 +113,7 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
         const counterId = e.target.dataset.doc;
         console.log("Delete clicked for:", counterId);
         
-        fetch('http://localhost:3000/', {
+        fetch('/', {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: counterId })
