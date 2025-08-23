@@ -71,7 +71,7 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
             })
         })
         .then((response) => response.json())
-        .then((data) => window.location.href = data.redirect)
+        // .then((data) => window.location.href = data.redirect)
         .catch((err) => console.log("Failed to add: ", err))
     }
 
@@ -88,7 +88,7 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
             })
         })
         .then((response) => response.json())
-        .then((data) => window.location.href = data.redirect)
+        // .then((data) => window.location.href = data.redirect)
         .catch((err) => console.log("Failed to add: ", err))
     }
 
@@ -105,7 +105,7 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
             })
         })
         .then((response) => response.json())
-        .then((data) => window.location.href = data.redirect)
+        // .then((data) => window.location.href = data.redirect)
         .catch((err) => console.log("Failed to add: ", err))
     }
 
@@ -119,7 +119,7 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
             body: JSON.stringify({ id: counterId })
         })
         .then((response) => response.json())
-        .then((data) => window.location.href = data.redirect)
+        // .then((data) => window.location.href = data.redirect)
         .catch((err) => console.log("Failed to delete: ", err))
     }
 });
