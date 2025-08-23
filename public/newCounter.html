@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="/">
+        <button id="back">Back to Menu</button>
+    </a>
+    <header>Create Counter</header>
+    <form action="/" method="post" id="form">
+        <label>Counter name:
+            <input type="text" name="counterName" id="input">
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+
+  const form = document.getElementById('form');
+  const input = document.getElementById('input');
+
+  form.addEventListener('submit', (e) => {
+    if (input.value) {
+      socket.emit('counter name', input.value);
+    }
+  });
+</script>
+</html>
