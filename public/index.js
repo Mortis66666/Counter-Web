@@ -68,7 +68,7 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
         const counterId = e.target.dataset.doc;
         console.log("Add clicked for:", counterId);
         
-        const response = fetch( '/', {
+        const response = fetch('/', {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
@@ -85,7 +85,7 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
         const counterId = e.target.dataset.doc;
         console.log("Minus clicked for:", counterId);
         
-        const response = fetch( '/', {
+        const response = fetch('/', {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
@@ -102,7 +102,7 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
         const counterId = e.target.dataset.doc;
         console.log("Reset clicked for:", counterId);
        
-        const response = fetch( '/', {
+        const response = fetch('/', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
@@ -199,13 +199,13 @@ document.querySelector('#counterList').addEventListener('click', (e) => {
 
 // Save scroll position
 window.addEventListener("scroll", () => {
-localStorage.setItem("scrollY", window.scrollY);
+    localStorage.setItem("scrollY", window.scrollY);
 });
 
 // Restore scroll position
 window.addEventListener("load", () => {
-const scrollY = localStorage.getItem("scrollY");
-if (scrollY !== null) {
-    window.scrollTo(0, parseInt(scrollY, 10));
-}
+    const scrollY = localStorage.getItem("scrollY");
+    if (scrollY !== null) {
+        window.scrollTo(0, parseInt(scrollY, 10));
+    }
 });

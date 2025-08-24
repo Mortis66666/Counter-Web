@@ -69,8 +69,8 @@ app.delete("/", (req, res) => {
 app.patch("/", (req, res) => {
     try{
         const { id, change } = req.body; 
-        if (change !=  1 && change != -1) {
-            res.tatus(400).send("YOU are naughty naughtyr")
+        if (change != 1 && change != -1) {
+            res.status(400).send("YOU are naughty naughtyr")
         } else {
             Counter.findByIdAndUpdate(
                 id, 
@@ -91,7 +91,7 @@ app.patch("/", (req, res) => {
 })
 
 app.put("/", (req, res) => {
-    const { id, value } = req.body;
+    const { id } = req.body;
     Counter.findByIdAndUpdate(
         id, 
         { $set: { value: 0 }}
